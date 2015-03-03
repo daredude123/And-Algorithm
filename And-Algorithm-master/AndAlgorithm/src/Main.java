@@ -31,6 +31,7 @@ public class Main {
 	public static void main(String[] args) {
 		TreeMap<String, String[]> col = readFile();
 		search(col,"Trond");
+		System.out.println("Andreas er awesome possum!!");
 
 	
 	}
