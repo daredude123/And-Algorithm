@@ -33,7 +33,7 @@ public class Main {
 		search(col,"Trond");
 		
 		
-		System.out.println("Trond er så mye mer awesome");
+		System.out.println("Trond er så mye mer awesomeee");
 	
 	}
 	
