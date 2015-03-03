@@ -1,12 +1,8 @@
 import java.io.File;
 import java.io.FilenameFilter;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.TreeMap;
-import java.util.Iterator;
 import java.util.Map.Entry;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 /*
  For each query term t
@@ -31,48 +27,32 @@ public class Main {
 	public static void main(String[] args) {
 		TreeMap<String, String[]> col = readFile();
 		search(col,"Trond");
-		
-		
-		System.out.println("Trond er så mye mer awesomeee");
-		System.out.println("Test");
+	
 	}
 	
 	public static String search(TreeMap<String, String[]> col, String searchParam){
 		
-		TreeMap<String,Integer> docFreq = new TreeMap<String,Integer>();
+		TreeMap<Integer,String> docFreq = new TreeMap<Integer,String>();
+		
 		for(Entry<String,String[]> index : col.entrySet()){
 			String key = index.getKey();
-			String[] array = index.getValue();
+			String[] values = index.getValue();
 			
-			System.out.println("\n"+key+"\n");
 			int freq = 0;
-			for(String ind : array){
-				System.out.println(ind);
-				
+			for(String ind : values){
 				if(searchParam.equals(ind)){
 					freq++;
-				docFreq.put(key,freq);
-				
 				}
 			}
+			 docFreq.put(freq,key);
 			
 		}
 		
 		
-		for(Entry<String,Integer> entry : docFreq.entrySet()){
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		String key = entry.getKey();
-		int val = entry.getValue();
-		
-		System.out.println(entry.getValue());
-		
-		list.add(val);
-		Collections.sort(list);
-		
-		for(int x : list){
-		//	System.out.println(x);
-		}
-		
+		for(Entry<Integer, String> entry : docFreq.entrySet()){
+		Integer key = entry.getKey();
+		String val = entry.getValue();
+        System.out.println(key + " " + val);
 		}
 		
 		return "test";
@@ -107,8 +87,6 @@ public class Main {
 			collection.put(docName,document);
 		
 			}
-			
-			
 			
 		}catch(Exception e){	
 		}
