@@ -34,7 +34,7 @@ public class Main {
 		
 		
 		System.out.println("Trond er så mye mer awesomeee");
-	
+		System.out.println("Test");
 	}
 	
 	public static String search(TreeMap<String, String[]> col, String searchParam){
