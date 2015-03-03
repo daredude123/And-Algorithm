@@ -32,7 +32,7 @@ public class Main {
 		TreeMap<String, String[]> col = readFile();
 		search(col,"Trond");
 		System.out.println("Andreas er awesome possum!!");
-		System.out.println("sdofhsoldhfskdhgf");
+		System.out.println("sdofhsoldhfskdhgfj");
 	
 	}
 	
